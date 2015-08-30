@@ -7,6 +7,7 @@ header{
 	text-align: center;
 	color:#FFF;
 }
+header h1{margin: 0;}
 nav{height:2em;background-color: #aaa;}
 ul{
 	list-style: none;
@@ -17,4 +18,5 @@ li{display: inline-block;line-height: 2em;width:15%;}
 li a{width: 100%;display: inline-block;}
 footer{
 	background: url(../img/sar.jpg) no-repeat center center;
+	text-align: center;
 }

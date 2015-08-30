@@ -2,20 +2,20 @@
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<meta name="description" content="Rakesh Yadav, profile page, projects, technical skills">
+	<meta name="description" content="Rakesh J Yadav, profile page, projects, technical skills">
 	<meta name="keywords" content="Rakesh Yadav, profile page, projects, technical skills">
 	<meta name="author" content="Rakesh Yadav">
-	<title>Test GitHub Page</title>
+	<title>Rakesh J Yadav - Professional Skills</title>
 	<link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 <body>
-	<header>Rakesh Yadav</header>
+	<header><h1>Rakesh Yadav</h1></header>
 	<nav>
 		<ul>
 			<li><a href="#home">Home</a></li>
 			<li><a href="#about_me">About Me</a></li>
 			<li><a href="#projects">Projects</a></li>
-			<li><a href="#interests">Interests</a></li>
+			<li><a href="#skills">Skills</a></li>
 			<li><a href="#contact_me">Contact me</a></li>
 		</ul>
 	</nav>
@@ -42,12 +42,66 @@
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
 
 
-	<section id="interests"> Interests- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	<section id="skills">
+	
+	skills- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<p>
+SASS:<br>
+	SASS Mixin calling mixin by bypassing initial default value arguments:<br>
+	SASS has the concept of mixin which is just like function in other programming languages.<br>
+	In SASS we can create mixins which have default values.<br>
+	Below is the example:<br>
+<pre>
+<code>
+	%yes_bg{
+		background:url(path/to/img.png);
+	}
+	%no_bg{
+		background:url(path/to/another_img.png);
+	}
+	@mixin my-mixin($color, $font-size:2em, $yes_bg:false){
+		color:$color;
+		font-size:$font-size;
+		@if $yes_bg{
+			@extend %yes_bg;
+		}
+		@else{
+			@extend %no_bg;
+		}
+		.oldie &{
+			@content;
+		}
+	}
+	.class-no-bg{
+		@include my-mixin(green);
+	}
+	.class-show-bg{
+		@include my-mixin(blue, $yes_bg: true){
+			box-shadow: 2px 2px 2px black;
+			border:1px solid black;
+		};
+	}
+</code>
+Below is the link for the SASSMEISTER working example.
+<a href="http://sassmeister.com/gist/23908095b3b7f13f5a1a" target="_blank">SASSMEISTER</a>
+The above example has the below SASS concepts covered:
+<ol>
+	<li>Function creation with default arguments.</li>
+	<li>Bypassing the earlier default arguments while calling.</li>
+	<li>Use of interpolation operator <b>#</b></li>
+	<li>Use of <b>@content</b> operator.</li>
+	<li>Use of <b>&</b> operator</li>
+	<li>Use of <b>mixins</b></li>
+	<li>Use of <b>if else</b></li>
+</ol>
+</pre>
+</p>
+	</section>
 
 
 	<section id="contact_me"> Contact Me- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
