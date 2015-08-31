@@ -51,8 +51,8 @@
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 <p>
-SASS:<br>
-	SASS Mixin calling mixin by bypassing initial default value arguments:<br>
+<h1>SASS</h1>
+	<h1>SASS Mixin calling mixin by bypassing initial default value arguments</h1>
 	SASS has the concept of mixin which is just like function in other programming languages.<br>
 	In SASS we can create mixins which have default values.<br>
 	Below is the example:<br>
@@ -102,6 +102,7 @@ The above example has the below SASS concepts covered:
 </pre>
 </p>
 <pre>
+	<h1>extend</h1>
 Below are the <b>extend</b> examples:
 Example 1:
 	<code>
@@ -126,7 +127,7 @@ Example 1:
 }
 </code>
 Below is link for the same:
-<a href="http://sassmeister.com/gist/44ab643c5aa29380116c">SASSMEISTER</a>
+<a href="http://sassmeister.com/gist/44ab643c5aa29380116c" target="_blank">SASSMEISTER</a>
 
 Example 2:
 	<code>
@@ -154,8 +155,35 @@ Example 2:
   @extend %main-copy;
 }
 
-	</code>
+</code>
+
+Below is link for the same:
+<a href="http://sassmeister.com/gist/bf04322206ce8ac5e263" target="_blank">SASSMEISTER</a>
+
+<h1>Loops / iteration </h1>
+<code>
+$color-names: alpha beta gamma;
+
+@mixin color-iterator($color, $iterations, $hue, $names: $color-names){
+  @for $i from 1 through $iterations{
+    .#{nth($names, $i)}-color{
+      $adjust: $i * $hue;
+      $use-color: adjust_hue($color, $adjust);
+      color:$use-color;
+    }
+  }
+}
+@include color-iterator(green, 3, 5)
+</code>
+
+Below is SASSMEISTER link for the same:
+<a href="http://sassmeister.com/gist/6ad781a9def16e1c4702" target="_blank">SASSMEISTER</a>
+
+Below is youtube link for the same:
+<a href="https://www.youtube.com/watch?v=vvAKLBqNroU" target="_blank">SASSMEISTER</a>
+
 </pre>
+	
 	</section>
 
 
