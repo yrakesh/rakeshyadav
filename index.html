@@ -101,6 +101,61 @@ The above example has the below SASS concepts covered:
 </ol>
 </pre>
 </p>
+<pre>
+Below are the <b>extend</b> examples:
+Example 1:
+	<code>
+.icon-pipe:before,
+.icon-mustache:before{
+  font-family:"icon-font";
+  display:inline-block
+}
+.icon-pipe:before{content:'\f100';}
+.icon-mustache:before{content:'\f101';}
+
+@mixin icon-font($font-name){
+  @extend .icon-#{$font-name};
+}
+
+.my-button{
+  @include icon-font(pipe);
+}
+
+.my-other-button{
+  @include icon-font(mustache);
+}
+</code>
+Below is link for the same:
+<a href="http://sassmeister.com/gist/44ab643c5aa29380116c">SASSMEISTER</a>
+
+Example 2:
+	<code>
+%main-title{
+  font-size:2em;
+  color:green;
+  a{
+    text-decoration:none;
+  }
+}
+%main-copy{
+  p, li{
+    font-size:0.9em;
+    color:#333;
+    font-family:comic-sans;
+  }
+}
+.my-title{
+  @extend %main-title;
+}
+.my-title-2{
+  //@extend .my-title;
+}
+.main-container{
+  @extend %main-copy;
+}
+
+	</code>
+</pre>
 	</section>
 
 
