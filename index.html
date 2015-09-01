@@ -180,7 +180,90 @@ Below is SASSMEISTER link for the same:
 <a href="http://sassmeister.com/gist/6ad781a9def16e1c4702" target="_blank">SASSMEISTER</a>
 
 Below is youtube link for the same:
-<a href="https://www.youtube.com/watch?v=vvAKLBqNroU" target="_blank">SASSMEISTER</a>
+<a href="https://www.youtube.com/watch?v=vvAKLBqNroU" target="_blank">Youtube</a>
+
+
+<h1> If / Else </h1>
+<code>
+$ie-support: true;
+
+@mixin if-demo($var){
+	@if $ie-support {
+		font-size: $var * 16px;
+	}
+	@if $var > 5 {
+		font-size: $var + rem;
+	}
+	@for $i from 1 through 5{
+		@if $i > 2 {
+			output: $i;
+		}
+	}
+}
+div{
+	@include if-demo( 7)	
+}
+
+$ie-support: false;
+$var: 6;
+div{
+  font-size: if($ie-support, $var * 16px, $var + rem);
+}
+</code>
+
+Below is SASSMEISTER link for the same:
+<a href="http://sassmeister.com/gist/61ea4a16a66da1551072" target="_blank">SASSMEISTER</a>
+
+Below is youtube link for the same:
+<a href="https://www.youtube.com/watch?v=n-zMNmPU6t8" target="_blank">Youtube</a>
+
+<h1> @each </h1>
+<code>
+$fragrance-products: rose jasmin merigold hibiscus;
+
+@mixin fragrance-generator{
+  @each $fragrance in $fragrance-products{
+    .photo-#{$fragrance}{
+      background:url(path-to-#{$fragrance}.png);
+    }
+  }  
+}
+
+.top, .middle{
+  @include fragrance-generator;
+}
+/****/
+$site-skins: green-skin, red-skin;
+$site-sections: main nav content footer;
+//
+@each $skin in $site-skins {
+  @each $section in $site-sections {
+    .#{$skin} .#{$section}{
+      background: url(skins/#{$skin}/sections/#{$section}.png);
+    }
+  }
+}
+
+/****/
+$alpha: #ccc;
+$beta: #DDD;
+$gama: #EEE;
+$color_names: alpha beta gama;
+$color_vals: $alpha, $beta, $gama;
+//
+@each $color in $color_names{
+  $i: index($color_names, $color);
+  .#{$color}{
+    color:nth($color_vals, $i);
+  }
+}
+</code>
+<h3>get index from list</h3>
+Below is SASSMEISTER link for the same:
+<a href="http://sassmeister.com/gist/8592e8f751277dc0c169" target="_blank">SASSMEISTER</a>
+
+Below is youtube link for the same:
+<a href="https://www.youtube.com/watch?v=dlmsjTi-HwI" target="_blank">Youtube</a>
 
 </pre>
 	
