@@ -265,6 +265,41 @@ Below is SASSMEISTER link for the same:
 Below is youtube link for the same:
 <a href="https://www.youtube.com/watch?v=dlmsjTi-HwI" target="_blank">Youtube</a>
 
+<h1> nesting </h1>
+<code>
+.menu{
+  background:#ccc;
+  .menu-item{
+    float:left;
+    .menu-link{
+      color:blue;
+      border-right:1px solid black;
+      &:hover, &:active{
+        color:#DDD;
+      }
+      .ie8 &{
+        color:red;
+      }
+      @media (min-width:600px){
+        color:green;
+      }
+      @media (min-width:900px){
+        color:purple;
+      }
+    }
+    &.last .menu-link{
+      border-right:none;
+    }
+  }
+}
+</code>
+<h3>get index from list</h3>
+Below is SASSMEISTER link for the same:
+<a href="http://sassmeister.com/gist/e0501cedf4e5c45ff010" target="_blank">SASSMEISTER</a>
+
+Below is youtube link for the same:
+<a href="https://www.youtube.com/watch?v=tGd9c4knERw" target="_blank">Youtube</a>
+
 </pre>
 	
 	</section>
