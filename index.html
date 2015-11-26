@@ -10,6 +10,7 @@
 </head>
 <body>
 	<header><h1>Rakesh Yadav</h1></header>
+	<div class="tst"></div>
 	<nav>
 		<ul>
 			<li><a href="#home">Home</a></li>
@@ -19,6 +20,7 @@
 			<li><a href="#contact_me">Contact me</a></li>
 		</ul>
 	</nav>
+	<iframe width="100%" height="300px" src="if.html" name="iframe_a"></iframe> 
 	<section id="home">Home - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -299,8 +301,108 @@ Below is SASSMEISTER link for the same:
 Below is youtube link for the same:
 <a href="https://www.youtube.com/watch?v=tGd9c4knERw" target="_blank">Youtube</a>
 
+<h1> variables </h1>
+<code>
+$cls: picture;
+
+.widget-#{$cls}{
+  prop:$cls;
+  #{$cls}:nope;
+}
+</code>
+Below is SASSMEISTER link for the same:
+<a href="http://sassmeister.com/gist/d555e301cf16b4466f2d" target="_blank">SASSMEISTER</a>
+
+Below is youtube link for the same:
+<a href="https://www.youtube.com/watch?v=U9hSPSNu73Q" target="_blank">Youtube</a>
+
+<h1> mixins </h1>
+<code>
+$bg_color:#d7d7d7; 
+
+@mixin rounded_arrow($bg_color, $width, $height, $pos: bottom){
+  width:$width;
+  height:$height;
+  background:$bg_color;
+  position:absolute;
+  @if $pos == 'bottom' {
+    bottom:-$height;
+    left:50%;
+    transform:translate(-50%);
+  }@else{
+    top:50%;
+    left:92%;
+    transform:translate(0, -60%) rotate(-90deg);
+  }
+  &:before, &:after{
+    content:'';
+    width:$width * 1.1;
+    height:$height * 2;
+    position:absolute;
+    background-color:white;
+    border-radius:50%;
+    top:0;
+  }
+  &:before{
+    left:-50%;
+  }
+  &:after{
+    right:-50%;
+  }
+}
+.box{
+  width:100px;
+  height:100px;
+  background-color:$bg_color;
+  margin:auto;
+  position:relative;
+}
+
+.arrow{
+  &.right { @include rounded_arrow(#ccc, 40px, 25px, right);}
+  &.bottom { @include rounded_arrow(#ccc, 40px, 25px, bottom); }
+}
+
+</code>
+
+<div class="box">
+  <div class="arrow right"></div>
+  <div class="arrow bottom"></div>
+</div>
+`
+Below is SASSMEISTER link for the same:
+<a href="http://sassmeister.com/gist/d555e301cf16b4466f2d" target="_blank">SASSMEISTER</a>
+
+Below is youtube link for the same:
+<a href="https://www.youtube.com/watch?v=U9hSPSNu73Q" target="_blank">Youtube</a>
+
 </pre>
-	
+
+<h3>Bourbon Test</h3>
+<div id="test1">
+	<div class="boxes">
+		<div class="box1"></div>
+		<div class="box1"></div>
+		<div class="box1"></div>
+		<div class="box1"></div>
+		<div class="box1"></div>
+	</div>
+	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolores accusantium dignissimos voluptates, delectus facilis ipsam aut illum, laudantium perferendis aliquam quam culpa repudiandae nemo vitae. Illum, saepe iste! Consequuntur, laboriosam.</p>
+</div>
+
+	<h1><a href="https://www.youtube.com/watch?v=dQeSRZbD1mw&spfreload=10" target="_blank">Debugging in Chrome</a></h1>
+	<p>
+	We can select elements from elements panel using CSS syntax. Then in the styles panel we can filter by attribute name. <br>
+	Shift + Click in styles panel on color-box of value (e.g background-color) to change between hex, rgb and HSL values<br>
+	Right click an element in the elements panel, and force any state (e.g. hover)<br>
+	Sources panel: Ctrl +p , search and open a file; Ctrl + Shift + P: search and open a function within the file. We can change the JS file , save it and then view the modifications and then can save it on our filesystem. <br>
+	</p>
+	<h3>disable cache <small>very important</small></h3>
+	<p>Goto to setting check the box for disable cahce</p>
+	<h3>adding code snippets</h3>
+	<a href="https://bgrins.github.io/devtools-snippets" target="_blank">devtoolssnippets</a>
+	<h3>HAR</h3>
+	<p>Go to networks tab and save as HAR (to debug the non reproducible error)</p>
 	</section>
 
 
