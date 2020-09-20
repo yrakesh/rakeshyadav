@@ -26,6 +26,103 @@
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+  <h1>React important links:</h1>
+  <p>
+<a href="https://www.youtube.com/watch?v=THL1OPn72vo">React hooks useMemo</a>
+<div>
+We use React useMemo hook in following 2 scenarios:
+<ol>
+<li>When we want to cache a return based function</li>
+<li>When we want to cache JS object/array</li>
+</ol>
+</div>
+</p>
+</section>
+
+	<section id="about_me"> About Me- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
+
+
+	<section id="projects"> Projects- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
+
+
+	<section id="skills">
+	
+	skills- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+<p>
+<h1>SASS</h1>
+	<h1>SASS Mixin calling mixin by bypassing initial default value arguments</h1>
+	SASS has the concept of mixin which is just like function in other programming languages.<br>
+	In SASS we can create mixins which have default values.<br>
+	Below is the example:<br>
+<pre>
+<code>
+	%yes_bg{
+		background:url(path/to/img.png);
+	}
+	%no_bg{
+		background:url(path/to/another_img.png);
+	}
+	@mixin my-mixin($color, $font-size:2em, $yes_bg:false){
+		color:$color;
+		font-size:$font-size;
+		@if $yes_bg{
+			@extend %yes_bg;
+		}
+		@else{
+			@extend %no_bg;
+		}
+		.oldie &{
+			@content;
+		}
+	}
+	.class-no-bg{
+		@include my-mixin(green);
+	}
+	.class-show-bg{
+		@include my-mixin(blue, $yes_bg: true){
+			box-shadow: 2px 2px 2px black;
+			border:1px solid black;
+		};
+	<meta name="description" content="Rakesh J Yadav, profile page, projects, technical skills">
+	<meta name="keywords" content="Rakesh Yadav, profile page, projects, technical skills">
+	<meta name="author" content="Rakesh Yadav">
+	<title>Rakesh J Yadav - Professional Skills</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<header><h1>Rakesh Yadav</h1></header>
+	<!-- <div class="tst"></div> -->
+	<nav>
+		<ul>
+			<li><a href="#home">Home</a></li>
+			<li><a href="#about_me">About Me</a></li>
+			<li><a href="#projects">Projects</a></li>
+			<li><a href="#skills">Skills</a></li>
+			<li><a href="#contact_me">Contact me</a></li>
+		</ul>
+	</nav>
+	<!-- <iframe width="100%" height="300px" src="if.html" name="iframe_a"></iframe>  -->
+	<section id="home">Home - Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</section>
 
 	<section id="about_me"> About Me- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -168,91 +265,6 @@ $color-names: alpha beta gamma;
 
 @mixin color-iterator($color, $iterations, $hue, $names: $color-names){
   @for $i from 1 through $iterations{
-    .#{nth($names, $i)}-color{
-      $adjust: $i * $hue;
-      $use-color: adjust_hue($color, $adjust);
-      color:$use-color;
-    }
-  }
-}
-@include color-iterator(green, 3, 5)
-</code>
-
-Below is SASSMEISTER link for the same:
-<a href="http://sassmeister.com/gist/6ad781a9def16e1c4702" target="_blank">SASSMEISTER</a>
-
-Below is youtube link for the same:
-<a href="https://www.youtube.com/watch?v=vvAKLBqNroU" target="_blank">Youtube</a>
-
-
-<h1> If / Else </h1>
-<code>
-$ie-support: true;
-
-@mixin if-demo($var){
-	@if $ie-support {
-		font-size: $var * 16px;
-	}
-	@if $var > 5 {
-		font-size: $var + rem;
-	}
-	@for $i from 1 through 5{
-		@if $i > 2 {
-			output: $i;
-		}
-	}
-}
-div{
-	@include if-demo( 7)	
-}
-
-$ie-support: false;
-$var: 6;
-div{
-  font-size: if($ie-support, $var * 16px, $var + rem);
-}
-</code>
-
-Below is SASSMEISTER link for the same:
-<a href="http://sassmeister.com/gist/61ea4a16a66da1551072" target="_blank">SASSMEISTER</a>
-
-Below is youtube link for the same:
-<a href="https://www.youtube.com/watch?v=n-zMNmPU6t8" target="_blank">Youtube</a>
-
-<h1> @each </h1>
-<code>
-$fragrance-products: rose jasmin merigold hibiscus;
-
-@mixin fragrance-generator{
-  @each $fragrance in $fragrance-products{
-    .photo-#{$fragrance}{
-      background:url(path-to-#{$fragrance}.png);
-    }
-  }  
-}
-
-.top, .middle{
-  @include fragrance-generator;
-}
-/****/
-$site-skins: green-skin, red-skin;
-$site-sections: main nav content footer;
-//
-@each $skin in $site-skins {
-  @each $section in $site-sections {
-    .#{$skin} .#{$section}{
-      background: url(skins/#{$skin}/sections/#{$section}.png);
-    }
-  }
-}
-
-/****/
-$alpha: #ccc;
-$beta: #DDD;
-$gama: #EEE;
-$color_names: alpha beta gama;
-$color_vals: $alpha, $beta, $gama;
-//
 @each $color in $color_names{
   $i: index($color_names, $color);
   .#{$color}{
@@ -394,9 +406,6 @@ Below is youtube link for the same:
 	<p>
 	We can select elements from elements panel using CSS syntax. Then in the styles panel we can filter by attribute name. <br>
 	Shift + Click in styles panel on color-box of value (e.g background-color) to change between hex, rgb and HSL values<br>
-	Right click an element in the elements panel, and force any state (e.g. hover)<br>
-	Sources panel: Ctrl +p , search and open a file; Ctrl + Shift + P: search and open a function within the file. We can change the JS file , save it and then view the modifications and then can save it on our filesystem. <br>
-	</p>
 	<h3>disable cache <small>very important</small></h3>
 	<p>Goto to setting check the box for disable cahce</p>
 	<h3>adding code snippets</h3>
@@ -418,3 +427,6 @@ Below is youtube link for the same:
 	
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
